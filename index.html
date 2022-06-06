@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8 />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="index.html">
+          <h6>TUHH</h6>
+        </a>
+      </h1>
+    <section id="bug">
+        <h4>Bug, Schiffsbug</h4>
+        <p>Der Bug ist der vorderste Teil eines Schiffes und wird durch den Vordersteven abgeschlossen. Der Vordersteven bestand bei den Holzschiffen aus einem Holzbalken und ist bei den heutigen Stahlschiffen ein speziell geformtes Stahlblech.</p>
+        <p>Der Bug muss strömungsgünstig geformt sein. Bei den heutigen Containerschiffen, Massengutfrachtern und Tankern wird kein Steilbug verwendet sondern ein Wulstbug mit einem Bulb, der wie eine Schiffsnase nach vorne ragt. Dieser Bug wird bei Schiffen mit erhöhter Eisklasse im Inneren durch waagerechte Bleche verstärkt, so dass eine Eisdicke bis zu einem Meter durchfahren werden kann. Der Bug eines reinen Eisbrechers ist im Bereich der Wasserlinie flach und steigt noch vorne konvex an, so dass das Schiff mit dem Bug auf das Eis fahren und dieses mit seinem Gewicht zerbrechen kann.</p>
+        <p>Ein neuer von der norwegischen Ulstein Werft entwickelter Bug (Ulstein X-Bow) sieht wie eine weiter nach oben und ab der Wasserlinie im Bogen nach achtern gezogener Bulb aus. Mit diesem Bug sind bei schwerer See höhere Geschwindigkeiten möglich und der nutzbare Schiffsraum wird vergrößert.</p>
+    </section>
+    <section id="heck" style="display: none;">
+        <h4>Heck</h4>
+        <p>Das Heck ist der hintere Teil des Schiffes bis zum Achtersteven. Die Bezeichnung Heck kommt aus dem Niederdeutschen (hek = Umfriedung). Sie stammt aus einer Zeit, in der das Heck zum Schutz für den Steuermann vor hohen Wellen erhöht und mit einem Schanzkleid umgeben war.</p>
+        <p>Nach ihrer Form unterscheidet man die Hecktypen Plattgatt (Spiegelheck), Rundgatt (rund zulaufendes Heck) und das spitz zulaufende Spitzgatt. In der heutigen Frachtschifffahrt wird das Spiegelheck benutzt mit einer flachen zumeist senkrechten Heckabschlussplatte, dem sog. Spiegel. Dieses Spiegelheck bringt zwar eine etwas ungünstige Wasserströmung mit sich, weil es einen größeren Ablösewiderstand hat, es ermöglicht aber ein größeres Transportvolumen bei geringeren Baukosten.</p>
+        <p>Das Ruder ist bei den Frachtschiffen nicht mehr am Achtersteven befestigt, sondern freihängend unter dem Heck.</p>
+        <p>Durch Heckform, Ruder und Schiffsantrieb (Schiffsschraube, Propeller) bildet sich während der Fahrt am Heck des Schiffes eine Heckwelle, die sich nach den Seiten hin ausbreitet. Gleichzeitig entsteht eine von Wirbeln hervorgerufene Wasserspur hinter dem fahrenden Schiff, die Hecksee oder Kielwasser oder Fahrwasser genannt wird. Diese Hecksee oder Kielwasser bleibt um so länger sichtbar, je ruhiger die See ist und sie nicht von Wellen verwischt wird.</p>
+    </section>
+    
+
+    <section id="ship"></section>
+
+    <script src="three.min.js"></script>
+    <script src="GLTFLoader.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script>
+        bug = document.getElementById("bug");
+        heck = document.getElementById("heck");
+
+        document.addEventListener('keydown', (event) => {
+        var name = event.key;
+        var code = event.code;
+        if (name == 'a') {
+            if (bug.style.display == "block") {
+                bug.style.display = "none";
+                heck.style.display = "block";
+            } else {
+                bug.style.display = "block";
+                heck.style.display = "none";
+            }
+        } 
+
+        // Alert the key name and key code on keydown
+        }, false);
+    </script>
+    <script>
+        let scene, camera, renderer;
+
+function init() {
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xdddddd);
+
+    camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,1,5000);
+    camera.rotation.y = 45/180*Math.PI;
+    camera.position.x = 800;
+    camera.position.y = 100;
+    camera.position.z = 1000;
+
+    hlight = new THREE.AmbientLight (0x404040,100);
+    scene.add(hlight);
+
+    directionalLight = new THREE.DirectionalLight(0xffffff,100);
+    directionalLight.position.set(0,1,0);
+    directionalLight.castShadow = true;
+    scene.add(directionalLight);
+    light = new THREE.PointLight(0xc4c4c4,10);
+    light.position.set(0,300,500);
+    scene.add(light);
+    light2 = new THREE.PointLight(0xc4c4c4,10);
+    light2.position.set(500,100,0);
+    scene.add(light2);
+    light3 = new THREE.PointLight(0xc4c4c4,10);
+    light3.position.set(0,100,-500);
+    scene.add(light3);
+    light4 = new THREE.PointLight(0xc4c4c4,10);
+    light4.position.set(-500,300,500);
+    scene.add(light4);
+
+    renderer = new THREE.WebGLRenderer({antialias:true});
+    renderer.setSize(window.innerWidth,window.innerHeight);
+
+    container = document.getElementById( 'ship' );
+    container.appendChild(renderer.domElement);
+
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.addEventListener('change', renderer);
+
+    let loader = new THREE.GLTFLoader();
+    loader.load('scene.gltf', function(gltf){
+        car = gltf.scene.children[0];
+        car.scale.set(0.5,0.5,0.5);
+        scene.add(gltf.scene);
+        animate();
+    });
+}
+function animate() {
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+}
+init();
+    </script>
+  </body>
+</html>
