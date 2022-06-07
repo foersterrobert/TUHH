@@ -6,13 +6,23 @@ body {
   overflow-x: hidden;
 }
 
-p, h1, h2, h3, h4, h5, h6, ul, ol {
+h1, h2, h3, h4, h5, h6 {
+  margin: 10px 0 0 0;
+}
+
+p, ul, ol {
   margin: 6px 0;
+}
+
+hr {
+  background-color: rgb(92, 157, 164);
+  border: none;
+  height: 1px;
 }
 
 .text-container {
   width: 80%;
-  margin: 80px auto;
+  margin: 70px auto;
 }
 
 .text-block {
@@ -29,9 +39,12 @@ p, h1, h2, h3, h4, h5, h6, ul, ol {
 }
 
 #info-1, #info-2, #info-3, #info-4, #info-5 {
-  width: 50%;
-  height: 400px;
   background-color: white;
   padding: 10px;
   border: 1px solid rgb(92, 157, 164);
+}
+
+.map {
+  display: flex;
+  gap: 40px;
 }

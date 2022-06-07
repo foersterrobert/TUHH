@@ -60,7 +60,7 @@ function animate() {
     schiff = document.getElementById("Schiff");
     tuhh = document.getElementById("TUHH");
     schiffsbau = document.getElementById("Schiffsbau");
-    schnupperstudium = document.getElementById("Schnuppertag");
+    schnupperstudium = document.getElementById("Schnupperstudium");
     grundriss = document.getElementById("Grundriss");
 
     info1 = document.getElementById("info-1");
