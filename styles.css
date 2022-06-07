@@ -6,9 +6,13 @@ body {
   overflow-x: hidden;
 }
 
+p, h1, h2, h3, h4, h5, h6, ul, ol {
+  margin: 6px 0;
+}
+
 .text-container {
   width: 80%;
-  margin: 20px auto;
+  margin: 80px auto;
 }
 
 .text-block {
