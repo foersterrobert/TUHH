@@ -1,5 +1,33 @@
 body {
   width: 100vw;
-  height: 100vh;
   margin: 0;
+  color: rgb(6, 93, 116);
+  background-color: rgb(243, 243, 243);
+  overflow-x: hidden;
+}
+
+.text-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.text-block {
+  position: absolute;
+  border: 1px solid rgb(92, 157, 164);
+  background-color: white;
+  padding: 10px;
+	top: 10px;
+  left: 10px;
+	width: 30%;
+	text-align: left;
+	z-index: 100;
+	display: block;
+}
+
+#info-1, #info-2, #info-3, #info-4, #info-5 {
+  width: 50%;
+  height: 400px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid rgb(92, 157, 164);
 }
