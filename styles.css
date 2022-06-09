@@ -4,6 +4,7 @@ body {
   color: rgb(6, 93, 116);
   background-color: rgb(243, 243, 243);
   overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,6 +13,10 @@ h1, h2, h3, h4, h5, h6 {
 
 p, ul, ol {
   margin: 6px 0;
+}
+
+img {
+  margin-top: 10px;
 }
 
 hr {
