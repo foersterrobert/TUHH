@@ -3,7 +3,7 @@ body {
   margin: 0;
   color: rgb(6, 93, 116);
   background-color: rgb(243, 243, 243);
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -47,6 +47,10 @@ hr {
   background-color: white;
   padding: 10px;
   border: 1px solid rgb(92, 157, 164);
+}
+
+#container, #container2 {
+  position: absolute;
 }
 
 .map {
