@@ -171,7 +171,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "block";
-
+        
         info1.style.display = "none";
         info2.style.display = "none";
         info3.style.display = "none";
@@ -183,12 +183,14 @@ document.addEventListener('keydown', (event) => {
 
 
 var container, 
-    renderer, 
-    scene, 
-    camera, 
-    mesh, 
-    start = Date.now(),
-    fov = 30;
+renderer, 
+scene, 
+camera, 
+mesh, 
+start = Date.now(),
+fov = 30;
+
+let scene2, camera2, renderer2;
 
 var clock = new THREE.Clock();
 
@@ -240,6 +242,31 @@ window.addEventListener('load', function() {
     container = document.getElementById('container');
     container.appendChild( renderer.domElement );
     render();
+    scene2 = new THREE.Scene();
+    
+    camera2 = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,1,5000);
+    camera2.rotation.y = 44/180*Math.PI;
+    camera2.position.x = 650;
+    camera2.position.y = 50;
+    camera2.position.z = 800;
+    
+    light = new THREE.PointLight(0xc4c4c4,10);
+    light.position.set(0,300,500);
+    scene2.add(light);
+    
+    renderer2 = new THREE.WebGLRenderer( { alpha: true } );
+    renderer2.setSize(window.innerWidth,window.innerHeight);
+    
+    container2 = document.getElementById( 'container2' );
+    container2.appendChild(renderer2.domElement);
+    
+    let loader = new THREE.GLTFLoader();
+    loader.load('scene.gltf', function(gltf){
+        model = gltf.scene.children[0];
+        model.scale.set(1, 1, 1);
+        scene2.add(gltf.scene);
+        animate();
+    });
 });
 
 window.addEventListener('resize',function() {
@@ -255,52 +282,7 @@ function render() {
 }
 
 
-let scene2, camera2, renderer2;
 
-function init() {
-    scene2 = new THREE.Scene();
-    
-    camera2 = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,1,5000);
-    camera2.rotation.y = 44/180*Math.PI;
-    camera2.position.x = 650;
-    camera2.position.y = 50;
-    camera2.position.z = 800;
-    
-    // hlight = new THREE.AmbientLight (0x404040,100);
-    // scene2.add(hlight);
-    
-    // directionalLight = new THREE.DirectionalLight(0xffffff,100);
-    // directionalLight.position.set(0,1,0);
-    // // directionalLight.castShadow = true;
-    // scene2.add(directionalLight);
-    light = new THREE.PointLight(0xc4c4c4,10);
-    light.position.set(0,300,500);
-    scene2.add(light);
-    // light2 = new THREE.PointLight(0xc4c4c4,10);
-    // light2.position.set(500,100,0);
-    // scene2.add(light2);
-    // light3 = new THREE.PointLight(0xc4c4c4,10);
-    // light3.position.set(0,100,-500);
-    // scene2.add(light3);
-    // light4 = new THREE.PointLight(0xc4c4c4,10);
-    // light4.position.set(-500,300,500);
-    // scene2.add(light4);
-    
-    renderer2 = new THREE.WebGLRenderer( { alpha: true } );
-    // renderer2.setClearColor( 0x000000, 0 ); // the default
-    renderer2.setSize(window.innerWidth,window.innerHeight);
-    
-    container2 = document.getElementById( 'container2' );
-    container2.appendChild(renderer2.domElement);
-    
-    let loader = new THREE.GLTFLoader();
-    loader.load('scene.gltf', function(gltf){
-        model = gltf.scene.children[0];
-        model.scale.set(1, 1, 1);
-        scene2.add(gltf.scene);
-        animate();
-    });
-}
 function animate() {
     renderer2.render(scene2, camera2);
       if (bug.style.display == "none" && heck.style.display == "none" && ruder.style.display == "none") {
@@ -310,4 +292,3 @@ function animate() {
       }
     requestAnimationFrame(animate);
 }
-init();
