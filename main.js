@@ -1,12 +1,12 @@
-bug = document.getElementById("bug");
-heck = document.getElementById("heck");
-ruder = document.getElementById("ruder");
-
 schiff = document.getElementById("Schiff");
 tuhh = document.getElementById("TUHH");
 schiffsbau = document.getElementById("Schiffsbau");
 schnupperstudium = document.getElementById("Schnupperstudium");
 grundriss = document.getElementById("Grundriss");
+
+bug = document.getElementById("bug");
+heck = document.getElementById("heck");
+ruder = document.getElementById("ruder");
 
 info1 = document.getElementById("info-1");
 info2 = document.getElementById("info-2");
@@ -18,109 +18,55 @@ info6 = document.getElementById("info-6");
 document.addEventListener('keydown', (event) => {
     var name = event.key;
 
-    if (schiff.style.display != "none") {
-        if (name == 's') {
-            heck.style.display = "block";
-            bug.style.display = "none";
-            ruder.style.display = "none";
-
-            model.rotation.x =  -Math.PI / 2;
-            model.rotation.y = 0 * Math.PI;
-            model.rotation.z = - 1/3 * Math.PI;
-        } 
-
-        else if (name == 'w') {
-            heck.style.display = "none";
-            bug.style.display = "block";
-            ruder.style.display = "none";
-
-            model.rotation.x = 0;
-            model.rotation.y = 0;
-            model.rotation.z = 0;
-        }
-
-        else if (name == 'a') {
-            heck.style.display = "none";
-            bug.style.display = "none";
-            ruder.style.display = "block";
-
-            model.rotation.x = 0;
-            model.rotation.y = 0;
-            model.rotation.z = 0;
-        }
-
-        else if (name == 'd') {
-            heck.style.display = "none";
-            bug.style.display = "none";
-            ruder.style.display = "none";
-        }
-    }
-
-    else if (grundriss.style.display != "none") {
-        if (name == 'q') {
-            info1.style.display = "block";
-            info2.style.display = "none";
-            info3.style.display = "none";
-            info4.style.display = "none";
-            info5.style.display = "none";
-            info6.style.display = "none";
-        }
-
-        else if (name == 'w') {
-            info1.style.display = "none";
-            info2.style.display = "block";
-            info3.style.display = "none";
-            info4.style.display = "none";
-            info5.style.display = "none";
-            info6.style.display = "none";
-        }
-
-        else if (name == 'e') {
-            info1.style.display = "none";
-            info2.style.display = "none";
-            info3.style.display = "block";
-            info4.style.display = "none";
-            info5.style.display = "none";
-            info6.style.display = "none";
-        }
-
-        else if (name == 'r') {
-            info1.style.display = "none";
-            info2.style.display = "none";
-            info3.style.display = "none";
-            info4.style.display = "block";
-            info5.style.display = "none";
-            info6.style.display = "none";
-        }
-
-        else if (name == 't') {
-            info1.style.display = "none";
-            info2.style.display = "none";
-            info3.style.display = "none";
-            info4.style.display = "none";
-            info5.style.display = "block";
-            info6.style.display = "none";
-        }
-
-        else if (name == 'z') {
-            info1.style.display = "none";
-            info2.style.display = "none";
-            info3.style.display = "none";
-            info4.style.display = "none";
-            info5.style.display = "none";
-            info6.style.display = "block";
-        }
-    }
-
-    if (name == '1') {
+    if (name == 'r') {
         schiff.style.display = "block";
         tuhh.style.display = "none";
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "none";
+
+        bug.style.display = "none";
+        heck.style.display = "none";
+        ruder.style.display = "none";
     }
 
-    else if (name == '2') {
+    if (name == 'a') {
+        schiff.style.display = "block";
+        tuhh.style.display = "none";
+        schiffsbau.style.display = "none";
+        schnupperstudium.style.display = "none";
+        grundriss.style.display = "none";
+
+        bug.style.display = "block";
+        heck.style.display = "none";
+        ruder.style.display = "none";
+    }
+    
+    if (name == 'b') {
+        schiff.style.display = "block";
+        tuhh.style.display = "none";
+        schiffsbau.style.display = "none";
+        schnupperstudium.style.display = "none";
+        grundriss.style.display = "none";
+
+        bug.style.display = "none";
+        heck.style.display = "none";
+        ruder.style.display = "block";
+    }
+
+    if (name == 'c') {
+        schiff.style.display = "block";
+        tuhh.style.display = "none";
+        schiffsbau.style.display = "none";
+        schnupperstudium.style.display = "none";
+        grundriss.style.display = "none";
+
+        bug.style.display = "none";
+        heck.style.display = "block";
+        ruder.style.display = "none";
+    }
+
+    if (name == 'd') {
         schiff.style.display = "none";
         tuhh.style.display = "block";
         schiffsbau.style.display = "none";
@@ -128,7 +74,7 @@ document.addEventListener('keydown', (event) => {
         grundriss.style.display = "none";
     }
 
-    else if (name == '3') {
+    if (name == 'e') {
         schiff.style.display = "none";
         tuhh.style.display = "none";
         schiffsbau.style.display = "block";
@@ -136,7 +82,7 @@ document.addEventListener('keydown', (event) => {
         grundriss.style.display = "none";
     }
 
-    else if (name == '4') {
+    if (name == 'f') {
         schiff.style.display = "none";
         tuhh.style.display = "none";
         schiffsbau.style.display = "none";
@@ -144,14 +90,95 @@ document.addEventListener('keydown', (event) => {
         grundriss.style.display = "none";
     }
 
-    else if (name == '5') {
+    if (name == '1') {
         schiff.style.display = "none";
         tuhh.style.display = "none";
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "block";
+
+        info1.style.display = "block";
+        info2.style.display = "none";
+        info3.style.display = "none";
+        info4.style.display = "none";
+        info5.style.display = "none";
+        info6.style.display = "none";
     }
 
+    if (name == '2') {
+        schiff.style.display = "none";
+        tuhh.style.display = "none";
+        schiffsbau.style.display = "none";
+        schnupperstudium.style.display = "none";
+        grundriss.style.display = "block";
+
+        info1.style.display = "none";
+        info2.style.display = "block";
+        info3.style.display = "none";
+        info4.style.display = "none";
+        info5.style.display = "none";
+        info6.style.display = "none";
+    }
+
+    if (name == '3') {
+        schiff.style.display = "none";
+        tuhh.style.display = "none";
+        schiffsbau.style.display = "none";
+        schnupperstudium.style.display = "none";
+        grundriss.style.display = "block";
+
+        info1.style.display = "none";
+        info2.style.display = "none";
+        info3.style.display = "block";
+        info4.style.display = "none";
+        info5.style.display = "none";
+        info6.style.display = "none";
+    }
+
+    if (name == '4') {
+        schiff.style.display = "none";
+        tuhh.style.display = "none";
+        schiffsbau.style.display = "none";
+        schnupperstudium.style.display = "none";
+        grundriss.style.display = "block";
+        
+        info1.style.display = "none";
+        info2.style.display = "none";
+        info3.style.display = "none";
+        info4.style.display = "block";
+        info5.style.display = "none";
+        info6.style.display = "none";
+    }
+
+    if (name == '5') {
+        schiff.style.display = "none";
+        tuhh.style.display = "none";
+        schiffsbau.style.display = "none";
+        schnupperstudium.style.display = "none";
+        grundriss.style.display = "block";
+
+        info1.style.display = "none";
+        info2.style.display = "none";
+        info3.style.display = "none";
+        info4.style.display = "none";
+        info5.style.display = "block";
+        info6.style.display = "none";
+    }
+
+    if (name == '6') {
+        schiff.style.display = "none";
+        tuhh.style.display = "none";
+        schiffsbau.style.display = "none";
+        schnupperstudium.style.display = "none";
+        grundriss.style.display = "block";
+
+        info1.style.display = "none";
+        info2.style.display = "none";
+        info3.style.display = "none";
+        info4.style.display = "none";
+        info5.style.display = "none";
+        info6.style.display = "block";
+    }
 }, false);
 
 
