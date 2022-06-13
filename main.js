@@ -288,7 +288,7 @@ function animate() {
       if (bug.style.display == "none" && heck.style.display == "none" && ruder.style.display == "none") {
             model.rotation.x += 0.01;
             model.rotation.y += 0.01;
-            model.rotation.z += 0.01;
+            model.rotation.z += 0.007;
       }
     requestAnimationFrame(animate);
 }
