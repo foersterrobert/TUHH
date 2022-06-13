@@ -3,6 +3,7 @@ tuhh = document.getElementById("TUHH");
 schiffsbau = document.getElementById("Schiffsbau");
 schnupperstudium = document.getElementById("Schnupperstudium");
 grundriss = document.getElementById("Grundriss");
+quellen = document.getElementById("Quellen");
 
 bug = document.getElementById("bug");
 heck = document.getElementById("heck");
@@ -24,6 +25,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "none";
+        quellen.style.display = "none";
 
         bug.style.display = "none";
         heck.style.display = "none";
@@ -36,10 +38,18 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "none";
+        quellen.style.display = "none";
 
         bug.style.display = "block";
         heck.style.display = "none";
         ruder.style.display = "none";
+
+        try {
+            model.rotation.z = Math.PI / 1.8;
+        }
+        catch(err) {
+            console.log(err);
+        }
     }
     
     if (name == 'b') {
@@ -48,10 +58,18 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "none";
+        quellen.style.display = "none";
 
         bug.style.display = "none";
         heck.style.display = "none";
         ruder.style.display = "block";
+
+        try {
+            model.rotation.z = Math.PI * 1.2;
+        }
+        catch(err) {
+            console.log(err);
+        }
     }
 
     if (name == 'c') {
@@ -60,10 +78,18 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "none";
+        quellen.style.display = "none";
 
         bug.style.display = "none";
         heck.style.display = "block";
         ruder.style.display = "none";
+
+        try {
+            model.rotation.z = Math.PI * -0.5;
+        }
+        catch(err) {
+            console.log(err);
+        }
     }
 
     if (name == 'd') {
@@ -72,6 +98,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "none";
+        quellen.style.display = "none";
     }
 
     if (name == 'e') {
@@ -80,6 +107,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "block";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "none";
+        quellen.style.display = "none";
     }
 
     if (name == 'f') {
@@ -88,6 +116,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "block";
         grundriss.style.display = "none";
+        quellen.style.display = "none";
     }
 
     if (name == '1') {
@@ -96,6 +125,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "block";
+        quellen.style.display = "none";
 
         info1.style.display = "block";
         info2.style.display = "none";
@@ -111,6 +141,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "block";
+        quellen.style.display = "none";
 
         info1.style.display = "none";
         info2.style.display = "block";
@@ -126,6 +157,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "block";
+        quellen.style.display = "none";
 
         info1.style.display = "none";
         info2.style.display = "none";
@@ -141,6 +173,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "block";
+        quellen.style.display = "none";
         
         info1.style.display = "none";
         info2.style.display = "none";
@@ -156,6 +189,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "block";
+        quellen.style.display = "none";
 
         info1.style.display = "none";
         info2.style.display = "none";
@@ -171,6 +205,7 @@ document.addEventListener('keydown', (event) => {
         schiffsbau.style.display = "none";
         schnupperstudium.style.display = "none";
         grundriss.style.display = "block";
+        quellen.style.display = "none";
         
         info1.style.display = "none";
         info2.style.display = "none";
@@ -179,8 +214,23 @@ document.addEventListener('keydown', (event) => {
         info5.style.display = "none";
         info6.style.display = "block";
     }
-}, false);
 
+    if (name == 'q') {
+        schiff.style.display = "none";
+        tuhh.style.display = "none";
+        schiffsbau.style.display = "none";
+        schnupperstudium.style.display = "none";
+        grundriss.style.display = "none";
+        quellen.style.display = "block";
+
+        info1.style.display = "none";
+        info2.style.display = "none";
+        info3.style.display = "none";
+        info4.style.display = "none";
+        info5.style.display = "none";
+        info6.style.display = "none";
+    }
+}, false);
 
 var container, 
 renderer, 
@@ -250,8 +300,8 @@ window.addEventListener('load', function() {
     camera2.position.y = 50;
     camera2.position.z = 800;
     
-    light = new THREE.PointLight(0xc4c4c4,10);
-    light.position.set(0,300,500);
+    light = new THREE.PointLight(0xffffff, 1);
+    light.position.set(1000,100,500);
     scene2.add(light);
     
     renderer2 = new THREE.WebGLRenderer( { alpha: true } );
@@ -263,7 +313,7 @@ window.addEventListener('load', function() {
     let loader = new THREE.GLTFLoader();
     loader.load('scene.gltf', function(gltf){
         model = gltf.scene.children[0];
-        model.scale.set(1, 1, 1);
+        model.scale.set(50, 50, 50);
         scene2.add(gltf.scene);
         animate();
     });
@@ -282,12 +332,9 @@ function render() {
 }
 
 
-
 function animate() {
     renderer2.render(scene2, camera2);
       if (bug.style.display == "none" && heck.style.display == "none" && ruder.style.display == "none") {
-            model.rotation.x += 0.01;
-            model.rotation.y += 0.01;
             model.rotation.z += 0.007;
       }
     requestAnimationFrame(animate);

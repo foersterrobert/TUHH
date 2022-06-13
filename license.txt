@@ -1,11 +1,11 @@
 Model Information:
-* title:	Ship in a bottle
-* source:	https://sketchfab.com/3d-models/ship-in-a-bottle-9ddbc5b32da94bafbfdb56e1f6be9a38
-* author:	Loïc Norgeot (https://sketchfab.com/norgeotloic)
+* title:	Costa Dano (cruise ship)
+* source:	https://sketchfab.com/3d-models/costa-dano-cruise-ship-38dc2404431e4606b1d516eadb2cd79b
+* author:	bence2011hey (https://sketchfab.com/bence2011hey)
 
 Model License:
-* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
-* requirements:	Author must be credited. No commercial use.
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Ship in a bottle" (https://sketchfab.com/3d-models/ship-in-a-bottle-9ddbc5b32da94bafbfdb56e1f6be9a38) by Loïc Norgeot (https://sketchfab.com/norgeotloic) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+This work is based on "Costa Dano (cruise ship)" (https://sketchfab.com/3d-models/costa-dano-cruise-ship-38dc2404431e4606b1d516eadb2cd79b) by bence2011hey (https://sketchfab.com/bence2011hey) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
